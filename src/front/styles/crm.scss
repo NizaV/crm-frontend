@@ -1,0 +1,68 @@
+@import "./index.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.crm-container {
+  margin: 25px auto;
+  padding: 0 15px;
+  overflow: auto;
+
+  @include md {
+    padding: 0;
+  }
+}
+/* Create four equal columns that float next to each other */
+.column {
+  border: 2px solid $secondary-color;
+  border-radius: 15px;
+  width: 100%;
+  margin: 15px auto;
+
+  & > h3 {
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+  }
+
+  @include lg {
+    width: 23%;
+    margin: 0 auto;
+  }
+}
+
+/* Clear float after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.uni-height {
+  height: 600px;
+}
+
+.col-height {
+  height: 34em;
+}
+
+.incontact-col {
+  background: $primary-gradient;
+  color: white;
+}
+.process-col {
+  background: $primary-gradient;
+  color: white;
+}
+.won-col {
+  background: $primary-gradient;
+  color: white;
+}
+.loss-col {
+  background: $primary-gradient;
+  color: white;
+}
+
+.crm-card {
+  border: none;
+}
