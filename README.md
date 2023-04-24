@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <img src="https://github.com/NizaV/crm-frontend/blob/master/src/img/profile-icon.png" alt="App Logo" width="200" height="200">
+  <img src="https://github.com/NizaV/crm-frontend/blob/main/src/front/img/profile-icon.png" alt="App Logo" width="200" height="200">
 </h1>
 
 <h4 align="center">A Contact Management Application with CRM Implementation</h4>
@@ -17,22 +17,22 @@ Exhibiting a full-stack interactive Contact Managment small web application :com
 
 ### Contact List
 
-![Home](src/img/contact-home.gif)
+![Home](src/front/img/contact-home.gif)
 <br>
 
 ### Add Contact
 
-![Add](src/img/add.gif)
+![Add](src/front/img/add.gif)
 <br>
 
 ### Edit
 
-![Edit](src/img/edit.gif)
+![Edit](src/front/img/edit.gif)
 <br>
 
 ### CRM
 
-![CRM](src/img/crm-prev.gif)
+![CRM](src/front/img/crm-prev.gif)
 <br>
 
 ## Steps to install this project
