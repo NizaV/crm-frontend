@@ -24,7 +24,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          <div className="h-100">
+          <div className="h-100 layout-container">
             <Navbar />
             <Routes>
               <Route exact path="/index.html" element={<Contacts />} />

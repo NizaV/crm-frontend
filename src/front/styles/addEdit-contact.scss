@@ -3,3 +3,16 @@
 .btn-style {
   background: $primary-gradient;
 }
+
+.addedit-contact {
+  height: 100%;
+}
+
+.form-group {
+  margin: 25px auto;
+
+  & label {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+}
