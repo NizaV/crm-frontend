@@ -60,3 +60,8 @@ $screen-xl-min: 1200px;
     @content;
   }
 }
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+}

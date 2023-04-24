@@ -1,4 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
+  const fetchUrl = "https://cors-proxy.pro";
+
   return {
     store: {
       contacts: [],
@@ -13,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         getActions().changeColor(0, "green");
       },
       loadSomeData: () => {
-        fetch(process.env.DATABASE_URL + "/agenda", {
+        fetch(fetchUrl + "/contacts", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -23,7 +25,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             if (!response.ok) {
               throw Error(response.statusText);
             }
-            console.log(response.json());
             console.log(process.env.DATABASE_URL);
             return response.json();
           })
@@ -35,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .catch((error) => console.log(error));
       },
       addContact: async (full_name, email, address, phone, status, history) => {
-        let response = await fetch("http://localhost:3001" + "/add", {
+        let response = await fetch(fetchUrl + "/add", {
           method: "POST",
           body: JSON.stringify({
             full_name: full_name,
@@ -52,22 +53,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then(() => history.push("/contacts"));
       },
       editContact: async (full_name, email, address, phone, status, id) => {
-        let response = await fetch(
-          process.env.DATABASE_URL + "/update/" + id.toString(),
-          {
-            method: "PUT",
-            body: JSON.stringify({
-              full_name: full_name,
-              email: email,
-              address: address,
-              phone: phone,
-              status: status,
-            }),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        let response = await fetch(fetchUrl + "/update/" + id.toString(), {
+          method: "PUT",
+          body: JSON.stringify({
+            full_name: full_name,
+            email: email,
+            address: address,
+            phone: phone,
+            status: status,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         getActions().loadSomeData();
       },
       updateStatus: async (updateContact, contactId) => {
@@ -88,15 +86,12 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
       },
       deleteContact: async (id) => {
-        let response = await fetch(
-          process.env.DATABASE_URL + "/delete/" + id.toString(),
-          {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        ).then(() => getActions().loadSomeData());
+        let response = await fetch(fetchUrl + "/delete/" + id.toString(), {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then(() => getActions().loadSomeData());
       },
 
       getMessage: async () => {
